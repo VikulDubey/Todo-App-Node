@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="filter">
+        <a href="/today"><button>Today</button></a>
+        <a href="/work"><button>Work</button></a>
+
+    </div>
+    <div id="todo-app">
+        <% if (locals.todayDate) { %>
+            <h2>
+                <%= todayDate%>
+            </h2>
+            <% }else{%>
+                <h2>Todo List</h2>
+                <% } %>
+                    <div id="todo-data">
+                        <form autocomplete="on" method="POST" action="/submit">
+                            <input type="text" name="text" id="textdata" placeholder="Add your task">
+                            <input type="submit" value="Add" id="btn">
+                        </form>
+                        <div id="task-list">
+                            <% if(locals.data){ %>
+                                <% for(let i=0; i<data.length;i++){ %>
+                                    <div class="list">
+                                        <input type="checkbox" name="time" id="" value="<%= todayDate%>">
+                                        <p value="work">
+                                            <%= data[i] %>
+                                        </p>
+                                        <a href="/dlt"><button class="cross">&#10008 <%[i] %></button> </a>
+                                    </div>
+                                    <% } %>
+                                        <% }else{ %>
+                                            <%= %>
+                                                <% } %>
+                        </div>
+                    </div>
+    </div>
+</div>
